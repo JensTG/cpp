@@ -12,7 +12,6 @@ using namespace std;
 
 int pngSignatureArray[] = {137, 80, 78, 71, 13, 10, 26, 10};
 
-int bytesToInt(ifstream* is, int n);
 int printBasicInfo(char* filename);
 
 int main(int argc, char** argv) {
@@ -60,14 +59,4 @@ int printBasicInfo(char* filename) {
         cout << chunkNames[i] << '\t' << chunkLengths[i] << '\n';
 
     return 0;
-}
-
-/**
- * @brief Converts little-endian bytes to ints
- **/
-int bytesToInt(ifstream* is, int n) {
-    int sum = 0;
-    for (int i = 0; i < n; i++)
-        sum += is-> get() * pow(256, n - 1 - i);
-    return sum;
 }
