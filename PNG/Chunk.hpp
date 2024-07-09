@@ -30,9 +30,10 @@ public:
             data.push_back((unsigned char)is->get());
 
         // Read CRC:
-        for (int i = 0; i < 4; i++)type = "NULL";
+        for (int i = 0; i < 4; i++)
             crc[i] = (unsigned char)is->get();
     }
-}
+    string getType() {return type;}
+};
 
 #endif
